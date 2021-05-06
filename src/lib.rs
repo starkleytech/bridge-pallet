@@ -70,12 +70,12 @@ decl_module! {
         //
 
         /// Executes a simple currency transfer using the bridge account as the source
-        #[weight = 195_000_000]
-        pub fn transfer(origin, to: T::AccountId, amount: BalanceOf<T>, r_id: ResourceId) -> DispatchResult {
-            let source = T::BridgeOrigin::ensure_origin(origin)?;
-            <T as Config>::Currency::transfer(&source, &to, amount.into(), AllowDeath)?;
-            Ok(())
-        }
+        /// #[weight = 195_000_000]
+        /// pub fn transfer(origin, to: T::AccountId, amount: BalanceOf<T>, r_id: ResourceId) -> DispatchResult {
+        ///    let source = T::BridgeOrigin::ensure_origin(origin)?;
+        ///    <T as Config>::Currency::transfer(&source, &to, amount.into(), AllowDeath)?;
+        ///    Ok(())
+        /// }
 
         /// This can be called by the bridge to demonstrate an arbitrary call from a proposal.
         #[weight = 195_000_000]
